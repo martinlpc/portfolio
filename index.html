@@ -7,7 +7,7 @@
     <title>Martin Pacheco | Full Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,6 +26,11 @@
             <li><a href="#downloads">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 </header>
 
@@ -45,15 +50,15 @@
                 </span>
             </h1>
             <p class="hero-description">
-                Software Engineer with 10+ years of experience building production software,
-                backend services and full stack applications.
-                Passionate about clean architecture, scalable systems,
-                developer experience and creating software that solves real problems.
+                Software Engineer with 10+ years of experience designing and developing
+                end-to-end software solutions.
+                I enjoy taking ownership of core technical decisions in order to build
+                scalable, maintainable solutions tailored to business needs
             </p>
 
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-value">14+</span>
+                    <span class="stat-value">10+</span>
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat">
@@ -65,8 +70,8 @@
                     <span class="stat-label">Measurements</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-value">10+</span>
-                    <span class="stat-label">HW Integrations</span>
+                    <span class="stat-value">5+</span>
+                    <span class="stat-label">HW+SW Integrations</span>
                 </div>
             </div>
 
@@ -81,7 +86,7 @@
                 <span>React</span>
                 <span>TypeScript</span>
                 <span>Python</span>
-                <span>Django</span>
+                <span>Electron</span>
                 <span>MongoDB</span>
                 <span>PostgreSQL</span>
                 <span>Docker</span>
@@ -140,17 +145,46 @@
                 // Featured Work
             </span>
             <h2>
-                Selected Projects
+                Main Projects
             </h2>
             <p>
-                Production-ready applications built with a strong focus on
-                scalability, architecture and user experience.
+                Including freelance and working experience
             </p>
         </div>
 
         <div class="projects-grid">
-            <!-- TaskFlow -->
+            <!-- RNI Monitor -->
             <article class="project-card featured">
+                <div class="project-top">
+                    <div>
+                        <h3>RNI Monitor</h3>
+                        <span class="project-year">2026</span>
+                    </div>
+                    <span class="project-status live">PRE-PRODUCTION</span>
+                </div>
+                <p>
+                    Electron app -evolution of AutoMap RNI software- for nationwide NIR mapping
+                    integrating GPS, EMF meters and data encryption for reliable data survey. 
+                </p>
+                <div class="project-stack">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Electron</span>
+                    <span>TypeScript</span>
+                    <span>Leaflet</span>
+                    <span>SQLite</span>
+                </div>
+                <div class="project-links">
+                    <a
+                        href="https://github.com/martinlpc/nir-monitor"
+                        target="_blank">
+                        GitHub
+                    </a>
+                </div>
+            </article>
+            
+            <!-- TaskFlow -->
+            <article class="project-card">
                 <div class="project-top">
                     <div>
                         <h3>TaskFlow</h3>
@@ -222,9 +256,9 @@
                 <div class="project-top">
                     <div>
                         <h3>AutoMap RNI</h3>
-                        <span class="project-year">Production</span>
+                        <span class="project-year">2016</span>
                     </div>
-                    <span class="project-status gov">GOVERNMENT</span>
+                    <span class="project-status gov">PRODUCTION</span>
                 </div>
                 <p>
                     Nationwide radiation mapping software used by ENACOM,
@@ -232,7 +266,7 @@
                     processing millions of measurement points.
                 </p>
                 <div class="project-stack">
-                    <span>.NET</span>
+                    <span>VB.NET</span>
                     <span>GPS</span>
                     <span>RF</span>
                     <span>Desktop</span>
@@ -328,7 +362,23 @@
         <div class="timeline">
             <article class="timeline-card">
                 <div class="timeline-date">
-                    2010 — Present
+                    Jan 2018 — Present
+                </div>
+                <div class="timeline-content">
+                    <h3>Software Engineer</h3>
+                    <h4>ENACOM · National Communications Agency</h4>
+                    <ul>
+                        <li>Designed <strong>RNI Monitor</strong> application to process over 500 thousand georeferenced data points under the ITU-K.113 standard, nationwide.</li>
+                        <li>Developed mission-critical desktop apps for real-time spectrum monitoring.</li>
+                        <li>Led 100% of architectural decisions, tech stack selection and DB modeling as the sole technical lead</li>
+                        <li>Transitioned into modern Full Stack development.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-date">
+                    Sep 2010 — Dec 2017
                 </div>
                 <div class="timeline-content">
                     <h3>Software Developer</h3>
@@ -394,7 +444,7 @@
                 Let's Build Something
             </h2>
             <p>
-                Open to Backend, Full Stack and Software Engineering opportunities.
+                Open to Software Engineering and Full Stack opportunities.
             </p>
         </div>
 

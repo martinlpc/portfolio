@@ -60,10 +60,9 @@ if (terminal) {
         {
             cmd: "experience",
             output: [
-                "14+ years",
-                "Government Software",
-                "Backend",
-                "Full Stack"
+                "10+ years",
+                "HW & SW Integration",
+                "Full Stack Web Apps"
             ]
         },
         {
@@ -73,16 +72,18 @@ if (terminal) {
                 "✓ React",
                 "✓ Python",
                 "✓ PostgreSQL",
-                "✓ Docker"
+                "✓ Express",
+                "✓ Electron",
+                "✓ TypeScript",
             ]
         },
         {
             cmd: "current_project",
             output: [
-                "RNI Monitor",
-                "Electron",
-                "Leaflet",
-                "GPS Integration"
+                "RNI MONITOR",
+                "- Electron",
+                "- Leaflet",
+                "- GPS Integration"
             ]
         },
         {
@@ -156,3 +157,27 @@ window.addEventListener("scroll", () => {
         window.scrollY > 20
     );
 });
+
+// =============================================
+// Mobile Nav Toggle
+// =============================================
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+if (navToggle && navLinks) {
+    function closeNav() {
+        navLinks.classList.remove("open");
+        navToggle.classList.remove("active");
+        navToggle.setAttribute("aria-expanded", "false");
+    }
+    navToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        navToggle.classList.toggle("active", isOpen);
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+    navLinks.addEventListener("click", e => {
+        if (e.target.tagName === "A") closeNav();
+    });
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape") closeNav();
+    });
+}
