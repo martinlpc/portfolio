@@ -181,3 +181,36 @@ if (navToggle && navLinks) {
         if (e.key === "Escape") closeNav();
     });
 }
+
+// =============================================
+// Easter Egg Console Message
+// =============================================
+const ASCII_LOGO = `
+█   █   █████       /
+██ ██   █   █      /
+█ █ █   █   █     /
+█   █   █████    /
+█   █   █       /
+█   █   █      /
+`;
+
+console.log(
+    `%c${ASCII_LOGO}`,
+    "color:#4ade80;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.2;"
+);
+console.log(
+    "%cHi! I'm Martin Pacheco",
+    "color:#4ade80;font-size:22px;font-weight:800;font-family:'JetBrains Mono',monospace;"
+);
+console.log(
+    "%cFull Stack Software Engineer based in Argentina",
+    "color:#9ca3af;font-size:17px;font-weight:500;font-family:'JetBrains Mono',monospace;"
+);
+console.log(
+    "%cgithub.com/martinlpc  ·  linkedin.com/in/martinlpacheco  ·  martinlpacheco@gmail.com",
+    "color:#6b7280;font-size:12px;font-family:'JetBrains Mono',monospace;"
+);
+console.log(
+    "%cOpen to work — say hi if you found this easter egg 👋",
+    "color:#9ca3af;font-size:12px;font-family:'JetBrains Mono',monospace;"
+);
