@@ -1,7 +1,7 @@
 // =============================================
 // Smooth Scroll
 // =============================================
-const SCROLL_OFFSET = 90;
+const SCROLL_OFFSET = 25;
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -113,8 +113,8 @@ if (terminal) {
         for (const char of text) {
             line.textContent += char;
             await sleep(28);
+            terminal.scrollTop = terminal.scrollHeight;
         }
-        terminal.scrollTop = terminal.scrollHeight;
     }
     async function execute(command) {
         await typeLine("> " + command.cmd, "terminal-command");
