@@ -214,3 +214,29 @@ console.log(
     "%cOpen to work — say hi if you found this easter egg 👋",
     "color:#9ca3af;font-size:12px;font-family:'JetBrains Mono',monospace;"
 );
+
+// =============================================
+// Internal Visit Tracking
+// =============================================
+(function trackVisit() {
+    const COOKIE_NAME = "mp_visitor";
+    const match = document.cookie.match(/(?:^|;\s*)mp_visitor=([^;]+)/);
+    let visitorId = match && match[1];
+
+    if (!visitorId) {
+        visitorId =
+            typeof crypto !== "undefined" && crypto.randomUUID
+                ? crypto.randomUUID()
+                : "id-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2);
+        document.cookie =
+            COOKIE_NAME + "=" + encodeURIComponent(visitorId) +
+            "; Max-Age=31536000; Path=/; SameSite=Lax";
+    }
+
+    fetch("/api/visit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ visitorId }),
+        keepalive: true
+    }).catch(() => {});
+})();
