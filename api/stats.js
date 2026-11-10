@@ -11,16 +11,25 @@ function isAuthorized(token) {
     return a.length === b.length && timingSafeEqual(a, b);
 }
 
-async function fetchAllDates() {
-    const dates = [];
+async function fetchAllVisits() {
+    const visits = [];
     for (let offset = 0; ; offset += PAGE_SIZE) {
         const res = await supabase(
-            `/visit_events?select=date&order=id&limit=${PAGE_SIZE}&offset=${offset}`
+            `/visit_events?select=date,country&order=id&limit=${PAGE_SIZE}&offset=${offset}`
         );
         const rows = await res.json();
-        for (const row of rows) dates.push(row.date);
-        if (rows.length < PAGE_SIZE) return dates;
+        visits.push(...rows);
+        if (rows.length < PAGE_SIZE) return visits;
     }
+}
+
+function countBy(items, key) {
+    const counts = new Map();
+    for (const item of items) {
+        const k = item[key] ?? "unknown";
+        counts.set(k, (counts.get(k) || 0) + 1);
+    }
+    return counts;
 }
 
 module.exports = async function handler(req, res) {
@@ -32,19 +41,22 @@ module.exports = async function handler(req, res) {
     }
 
     try {
-        const dates = await fetchAllDates();
+        const visits = await fetchAllVisits();
+        const byDay = countBy(visits, "date");
 
-        const counts = new Map();
-        for (const date of dates) counts.set(date, (counts.get(date) || 0) + 1);
-
-        const perDay = [...counts]
+        const perDay = [...byDay]
             .sort(([a], [b]) => a.localeCompare(b))
             .map(([date, count]) => ({ date, count }));
 
+        const perCountry = [...countBy(visits, "country")]
+            .sort(([, a], [, b]) => b - a)
+            .map(([country, count]) => ({ country, count }));
+
         return res.status(200).json({
-            today: counts.get(todayISO()) || 0,
-            total: dates.length,
-            perDay
+            today: byDay.get(todayISO()) || 0,
+            total: visits.length,
+            perDay,
+            perCountry
         });
     } catch (err) {
         console.error(err);
