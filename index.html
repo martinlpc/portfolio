@@ -3,503 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Martin Pacheco - Full Stack Software Engineer. 10+ years of software engineering experience.">
+    <title>Martin Pacheco — Software Engineer</title>
+    <meta name="description" content="Martin Pacheco — Full Stack Software Engineer in Buenos Aires. Designing and building web platforms, APIs and desktop apps end to end since 2010.">
+    <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121314" media="(prefers-color-scheme: dark)">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://martin-pacheco.vercel.app/">
     <meta property="og:site_name" content="Martin Pacheco">
-    <meta property="og:title" content="Hi, I'm Martin Pacheco">
-    <meta property="og:description" content="Full Stack Software Engineer with 10+ years of experience. Open to Software Engineering and Full Stack opportunities.">
+    <meta property="og:title" content="Martin Pacheco — Software Engineer">
+    <meta property="og:description" content="Full Stack Software Engineer building web platforms, APIs and desktop apps end to end. Open to Software Engineering and Full Stack roles, any domain.">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/60750406?v=4">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Hi, I'm Martin Pacheco">
-    <meta name="twitter:description" content="Full Stack Software Engineer with 10+ years of experience. Open to Software Engineering and Full Stack opportunities.">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/60750406?v=4">
-    <title>MP/ Full Stack Software Engineer</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316181d'/%3E%3Cpath d='M3 24h5l3-6 3 9 4-21 3 12 2-4h6' fill='none' stroke='%23ff7a4d' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-<div class="grid-background"></div>
 
-<header>
-    <nav>
-        <a href="#about" class="logo">
-            MP<span>/</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#downloads">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+<header class="site-header">
+    <div class="wrap">
+        <a href="#top" class="brand">Martin Pacheco</a>
+        <nav aria-label="Sections">
+            <a href="#work">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#stack">Stack</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<main>
-    <section class="hero" id="about">
-        <div class="hero-content">
-            <div class="hero-eyebrow">
-                Full Stack Software Engineer
-            </div>
-            <h1>
-                <span class="hero-light">
-                    Hi, I'm
-                </span>
-                <br>
-                <span class="hero-name">
-                    Martin Pacheco
-                </span>
-            </h1>
-            <p class="hero-description">
-                Software Engineer with 10+ years of experience designing and developing
-                end-to-end software solutions.
-                I enjoy taking ownership of core technical decisions in order to build
-                scalable, maintainable solutions tailored to business needs.
+<main id="top">
+    <section class="intro wrap">
+        <div class="intro-text">
+            <p class="kicker">Software Engineer · Full Stack · Buenos Aires</p>
+            <h1>Martin Pacheco</h1>
+            <p class="lede">
+                I design and build software end to end — web platforms, APIs, desktop apps —
+                and take ownership of the decisions behind them: architecture, data model, stack.
+                Since 2010 at ENACOM, Argentina's communications regulator, often as the sole
+                technical lead.
             </p>
-
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-value">10+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">4</span>
-                    <span class="stat-label">Production Apps</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">10M+</span>
-                    <span class="stat-label">Measurements</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">5+</span>
-                    <span class="stat-label">HW+SW Integrations</span>
-                </div>
-            </div>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects →</a>
-                <a href="#contact" class="btn btn-secondary">Get in touch</a>
-            </div>
-
-            <div class="hero-social">
-                <a href="https://github.com/martinlpc"
-                   target="_blank" rel="noopener">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                    GitHub
-                </a>
-                <a href="https://linkedin.com/in/martinlpacheco"
-                   target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/>
-                    </svg>
-                    LinkedIn
-                </a>
-                <a href="mailto:martinlpacheco@gmail.com">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2l-8 5-8-5h16zm0 12H4V7.83l8 5 8-5V18z"/>
-                    </svg>
-                    Email
-                </a>
-            </div>
+            <p class="lede">
+                I'm at home in the messy parts too: hardware integrations, field data,
+                offline-first sync. Open to Software Engineering and Full Stack roles, any domain.
+            </p>
+            <ul class="intro-links">
+                <li><a href="https://github.com/martinlpc" target="_blank" rel="noopener">GitHub ↗</a></li>
+                <li><a href="https://linkedin.com/in/martinlpacheco" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                <li><a href="mailto:martinlpacheco@gmail.com">martinlpacheco@gmail.com</a></li>
+            </ul>
         </div>
-
-        <aside class="hero-terminal">
-            <div class="terminal">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <div class="terminal-path">
-                        ~/martin-pacheco
-                    </div>
-                </div>
-                <div class="terminal-body">
-                    <img
-                        src="https://avatars.githubusercontent.com/u/60750406?v=4"
-                        alt="Martin Pacheco">
-                    <div class="terminal-status">
-                        <span class="status-dot"></span>
-                        Available for work
-                    </div>
-                </div>
-            </div>
-
-            <div class="terminal-console">
-                <div class="terminal-output" id="terminal-output"></div>
-            </div>
-        </aside>
+        <img class="portrait"
+             src="https://avatars.githubusercontent.com/u/60750406?v=4"
+             alt="Portrait of Martin Pacheco"
+             width="176" height="176">
     </section>
 
-    <div class="scroll-indicator">
-        <span>Scroll to explore</span>
-        ↓
-    </div>
+    <figure class="trace wrap" aria-hidden="true">
+        <svg id="spectrum" viewBox="0 0 1000 140"></svg>
+    </figure>
 
-    <section id="projects" class="section fade-in">
-        <div class="section-header">
-            <span class="section-eyebrow">
-                // Featured Work
-            </span>
-            <h2>
-                Main Projects
-            </h2>
-            <p>
-                Including freelance and working experience
-            </p>
-        </div>
-
-        <div class="projects-grid">
-            <!-- RNI Monitor -->
-            <article class="project-card featured">
-                <div class="project-top">
-                    <div>
-                        <h3>RNI Monitor</h3>
-                        <span class="project-year">2026</span>
-                    </div>
-                    <span class="project-status live">PRE-PRODUCTION</span>
+    <section id="work" class="section wrap">
+        <h2 class="section-title"><span>01</span>Selected work</h2>
+        <ol class="entries">
+            <li class="entry">
+                <div class="entry-meta">
+                    <span>2026</span>
+                    <span class="status">Pre-production</span>
                 </div>
-                <p>
-                    Desktop application for nationwide field data collection. Built with Electron,
-                    React and Node.js, integrating external hardware, geospatial mapping, encrypted
-                    local storage and offline synchronization. 
-                </p>
-                <div class="project-stack">
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>Electron</span>
-                    <span>TypeScript</span>
-                    <span>Leaflet</span>
-                    <span>SQLite</span>
-                    <span>OpenCode</span>
-                </div>
-                <div class="project-links">
-                    <a
-                        href="https://github.com/martinlpc/nir-monitor"
-                        target="_blank">
-                        GitHub
-                    </a>
-                </div>
-            </article>
-            
-            <!-- TaskFlow -->
-            <article class="project-card">
-                <div class="project-top">
-                    <div>
-                        <h3>TaskFlow</h3>
-                        <span class="project-year">2026</span>
-                    </div>
-                    <span class="project-status live">LIVE</span>
-                </div>
-                <p>
-                    Full Stack task management platform featuring authentication,
-                    role-based access, PostgreSQL, MongoDB, Prisma and JWT.
-                </p>
-                <div class="project-stack">
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>Express</span>
-                    <span>MongoDB</span>
-                    <span>PostgreSQL</span>
-                    <span>Prisma</span>
-                </div>
-                <div class="project-links">
-                    <a
-                        href="https://taskflow-mp.vercel.app"
-                        target="_blank">
-                        Live →
-                    </a>
-                    <a
-                        href="https://github.com/martinlpc/taskflow"
-                        target="_blank">
-                        GitHub
-                    </a>
-                </div>
-            </article>
-
-            <!-- Oeisis -->
-            <article class="project-card">
-                <div class="project-top">
-                    <div>
-                        <h3>Oeisis Website</h3>
-                        <span class="project-year">2025</span>
-                    </div>
-                    <span class="project-status live">LIVE</span>
-                </div>
-                <p>
-                    High performance landing page built with Astro and React,
-                    optimized for Lighthouse and SEO with static generation.
-                </p>
-                <div class="project-stack">
-                    <span>Astro</span>
-                    <span>React</span>
-                    <span>Firebase</span>
-                    <span>Tailwind</span>
-                </div>
-                <div class="project-links">
-                    <a
-                        href="https://oeisis.netlify.app"
-                        target="_blank">
-                        Live →
-                    </a>
-                    <a
-                        href="https://github.com/martinlpc/oeisis-website"
-                        target="_blank">
-                        GitHub
-                    </a>
-                </div>
-            </article>
-
-            <!-- AutoMap -->
-            <article class="project-card">
-                <div class="project-top">
-                    <div>
-                        <h3>AutoMap RNI</h3>
-                        <span class="project-year">2016</span>
-                    </div>
-                    <span class="project-status gov">PRODUCTION</span>
-                </div>
-                <p>
-                    Nationwide radiation mapping software used by ENACOM,
-                    integrating GPS, spectrum analyzers and field equipment,
-                    processing millions of measurement points.
-                </p>
-                <div class="project-stack">
-                    <span>VB.NET</span>
-                    <span>GPS</span>
-                    <span>RF</span>
-                    <span>Desktop</span>
-                </div>
-                <div class="project-links">
-                    <a
-                        href="https://github.com/martinlpc/automaprni"
-                        target="_blank">
-                        GitHub
-                    </a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section id="skills" class="section fade-in">
-        <div class="section-header">
-            <span class="section-eyebrow">
-                // Tech Stack
-            </span>
-            <h2>
-                Skills & Technologies
-            </h2>
-            <p>
-                Technologies I use to build scalable applications.
-            </p>
-        </div>
-
-        <div class="skills-layout">
-            <article class="skill-box">
-                <h3>Backend</h3>
-                <div class="skill-cloud">
-                    <span>Node.js</span>
-                    <span>Express</span>
-                    <span>Python</span>
-                    <span>Django</span>
-                    <span>REST APIs</span>
-                    <span>JWT</span>
-                    <span>Clean Architecture</span>
-                </div>
-            </article>
-
-            <article class="skill-box">
-                <h3>Frontend</h3>
-                <div class="skill-cloud">
-                    <span>React</span>
-                    <span>JavaScript</span>
-                    <span>TypeScript</span>
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>TailwindCSS</span>
-                </div>
-            </article>
-
-            <article class="skill-box">
-                <h3>Databases</h3>
-                <div class="skill-cloud">
-                    <span>MongoDB</span>
-                    <span>PostgreSQL</span>
-                    <span>Firebase</span>
-                    <span>Prisma</span>
-                    <span>Schema Design</span>
-                </div>
-            </article>
-
-            <article class="skill-box">
-                <h3>DevOps & Tools</h3>
-                <div class="skill-cloud">
-                    <span>AI agents</span>
-                    <span>Docker</span>
-                    <span>Git</span>
-                    <span>GitHub Actions</span>
-                    <span>Railway</span>
-                    <span>Vercel</span>
-                    <span>CI/CD</span>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section id="experience" class="section fade-in">
-        <div class="section-header">
-            <span class="section-eyebrow">
-                // Experience
-            </span>
-            <h2>
-                Professional Journey
-            </h2>
-            <p>
-                More than a decade developing software for government, desktop and web platforms.
-            </p>
-        </div>
-
-        <div class="timeline">
-            <article class="timeline-card">
-                <div class="timeline-date">
-                    Jan 2018 — Present
-                </div>
-                <div class="timeline-content">
-                    <h3>Software Engineer</h3>
-                    <h4>ENACOM · National Communications Agency</h4>
-                    <ul>
-                        <li>Designed <strong>RNI Monitor</strong> application to process over 500 thousand georeferenced data points under the ITU-K.113 standard, nationwide.</li>
-                        <li>Developed mission-critical desktop apps for real-time spectrum monitoring.</li>
-                        <li>Led 100% of architectural decisions, tech stack selection and DB modeling as the sole technical lead</li>
-                        <li>Transitioned into modern Full Stack development.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="timeline-card">
-                <div class="timeline-date">
-                    Sep 2010 — Dec 2017
-                </div>
-                <div class="timeline-content">
-                    <h3>Software Developer</h3>
-                    <h4>ENACOM · National Communications Agency</h4>
+                <div class="entry-body">
+                    <h3>RNI Monitor</h3>
                     <p>
-                        Designing and developing software for RF spectrum monitoring,
-                        radio measurements and laboratory systems used throughout Argentina.
+                        Desktop app for nationwide non-ionizing radiation field surveys.
+                        Talks to external measurement hardware, plots results on a map,
+                        keeps data in encrypted local storage and syncs when back online.
                     </p>
-                    <ul>
-                        <li>Developed AutoMap RNI used nationwide.</li>
-                        <li>Integrated more than 10 measurement instruments.</li>
-                        <li>Built ISO 9001 laboratory software.</li>
-                        <li>Developed airport RF interference analysis tools.</li>
-                        <li>Transitioned into modern Full Stack development.</li>
+                    <p class="tech">Electron · React · TypeScript · Node.js · Leaflet · SQLite</p>
+                    <p class="entry-links">
+                        <a href="https://github.com/martinlpc/nir-monitor" target="_blank" rel="noopener">Source ↗</a>
+                    </p>
+                </div>
+            </li>
+
+            <li class="entry">
+                <div class="entry-meta">
+                    <span>2026</span>
+                    <span class="status is-live">Live</span>
+                </div>
+                <div class="entry-body">
+                    <h3>TaskFlow</h3>
+                    <p>
+                        Task management platform with authentication, role-based access
+                        and JWT, backed by PostgreSQL via Prisma alongside MongoDB.
+                    </p>
+                    <p class="tech">React · Node.js · Express · PostgreSQL · Prisma · MongoDB</p>
+                    <p class="entry-links">
+                        <a href="https://taskflow-mp.vercel.app" target="_blank" rel="noopener">Visit ↗</a>
+                        <a href="https://github.com/martinlpc/taskflow" target="_blank" rel="noopener">Source ↗</a>
+                    </p>
+                </div>
+            </li>
+
+            <li class="entry">
+                <div class="entry-meta">
+                    <span>2025</span>
+                    <span class="status is-live">Live</span>
+                </div>
+                <div class="entry-body">
+                    <h3>Oeisis</h3>
+                    <p>
+                        Statically generated landing page built with Astro and React,
+                        tuned for Lighthouse scores and SEO.
+                    </p>
+                    <p class="tech">Astro · React · Tailwind · Firebase</p>
+                    <p class="entry-links">
+                        <a href="https://oeisis.netlify.app" target="_blank" rel="noopener">Visit ↗</a>
+                        <a href="https://github.com/martinlpc/oeisis-website" target="_blank" rel="noopener">Source ↗</a>
+                    </p>
+                </div>
+            </li>
+
+            <li class="entry">
+                <div class="entry-meta">
+                    <span>2016</span>
+                    <span class="status">In production</span>
+                </div>
+                <div class="entry-body">
+                    <h3>AutoMap RNI</h3>
+                    <p>
+                        Radiation mapping software used by ENACOM across the country.
+                        Drives GPS receivers, spectrum analyzers and field probes together,
+                        and has processed millions of measurement points.
+                    </p>
+                    <p class="tech">VB.NET · GPS · RF instrumentation · Desktop</p>
+                    <p class="entry-links">
+                        <a href="https://github.com/martinlpc/automaprni" target="_blank" rel="noopener">Source ↗</a>
+                    </p>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <section id="experience" class="section wrap">
+        <h2 class="section-title"><span>02</span>Experience</h2>
+        <ol class="entries">
+            <li class="entry">
+                <div class="entry-meta">
+                    <span>2018 — now</span>
+                </div>
+                <div class="entry-body">
+                    <h3>Software Engineer</h3>
+                    <p class="org">ENACOM · National Communications Agency</p>
+                    <ul class="points">
+                        <li>Designed RNI Monitor to process 500k+ georeferenced data points nationwide under ITU-T K.113.</li>
+                        <li>Built mission-critical desktop apps for real-time spectrum monitoring.</li>
+                        <li>Sole technical lead: architecture, stack selection and data modeling.</li>
+                        <li>Transitioned into modern full stack development.</li>
                     </ul>
                 </div>
-            </article>
-        </div>
+            </li>
+
+            <li class="entry">
+                <div class="entry-meta">
+                    <span>2010 — 2017</span>
+                </div>
+                <div class="entry-body">
+                    <h3>Software Developer</h3>
+                    <p class="org">ENACOM · National Communications Agency</p>
+                    <ul class="points">
+                        <li>Built AutoMap RNI, still in use across Argentina.</li>
+                        <li>Integrated more than 10 measurement instruments.</li>
+                        <li>Wrote the software for an ISO 9001 certified laboratory.</li>
+                        <li>Developed RF interference analysis tools for airports.</li>
+                    </ul>
+                </div>
+            </li>
+        </ol>
     </section>
 
-    <section id="downloads" class="section fade-in">
-        <div class="section-header">
-            <span class="section-eyebrow">
-                // Resume
-            </span>
-            <h2>
-                Download CV
-            </h2>
-            <p>
-                Available in English and Spanish.
-            </p>
-        </div>
-
-        <div class="resume-grid">
-            <a
-                href="cv/Martin_Pacheco_Developer_2026_EN.pdf"
-                download
-                class="resume-card">
-                <span class="resume-lang">EN</span>
-                <h3>English Resume</h3>
-                <p>PDF</p>
-                <span class="resume-download">Download →</span>
-            </a>
-
-            <a
-                href="cv/Martin_Pacheco_Developer_2026_ES.pdf"
-                download
-                class="resume-card">
-                <span class="resume-lang">ES</span>
-                <h3>Currículum Vitae</h3>
-                <p>PDF</p>
-                <span class="resume-download">Descargar →</span>
-            </a>
-        </div>
-    </section>
-
-    <section id="contact" class="section fade-in">
-        <div class="section-header">
-            <span class="section-eyebrow">
-                // Contact
-            </span>
-            <h2>
-                Let's Build Something
-            </h2>
-            <p>
-                Open to Software Engineering and Full Stack opportunities.
-            </p>
-        </div>
-
-        <div class="contact-grid">
-            <a
-                class="contact-card"
-                href="mailto:martinlpacheco@gmail.com">
-                <span class="contact-title">Email</span>
-                <span class="contact-value">martinlpacheco@gmail.com</span>
-            </a>
-
-            <a
-                class="contact-card"
-                href="https://github.com/martinlpc"
-                target="_blank">
-                <span class="contact-title">GitHub</span>
-                <span class="contact-value">github.com/martinlpc</span>
-            </a>
-
-            <a
-                class="contact-card"
-                href="https://linkedin.com/in/martinlpacheco"
-                target="_blank">
-                <span class="contact-title">LinkedIn</span>
-                <span class="contact-value">linkedin.com/in/martinlpacheco</span>
-            </a>
-
-            <div class="contact-card">
-                <span class="contact-title">Location</span>
-                <span class="contact-value">Buenos Aires, Argentina</span>
+    <section id="stack" class="section wrap">
+        <h2 class="section-title"><span>03</span>Stack</h2>
+        <dl class="stack">
+            <div>
+                <dt>Backend</dt>
+                <dd>Node.js, Express, Python, Django, REST APIs, JWT</dd>
             </div>
+            <div>
+                <dt>Frontend</dt>
+                <dd>React, TypeScript, JavaScript, HTML, CSS, Tailwind</dd>
+            </div>
+            <div>
+                <dt>Data</dt>
+                <dd>PostgreSQL, MongoDB, SQLite, Prisma, Firebase</dd>
+            </div>
+            <div>
+                <dt>Desktop</dt>
+                <dd>Electron, VB.NET, instrument integration (GPS, spectrum analyzers)</dd>
+            </div>
+            <div>
+                <dt>Tooling</dt>
+                <dd>Git, GitHub Actions, Docker, Vercel, Railway, AI coding agents</dd>
+            </div>
+        </dl>
+    </section>
+
+    <section id="contact" class="section wrap">
+        <h2 class="section-title"><span>04</span>Contact</h2>
+        <div class="contact">
+            <a class="contact-mail" href="mailto:martinlpacheco@gmail.com">martinlpacheco@gmail.com</a>
+            <dl class="stack">
+                <div>
+                    <dt>Résumé</dt>
+                    <dd>
+                        <a href="cv/Martin_Pacheco_Developer_2026_EN.pdf" download>English (PDF)</a>,
+                        <a href="cv/Martin_Pacheco_Developer_2026_ES.pdf" download lang="es">Español (PDF)</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Elsewhere</dt>
+                    <dd>
+                        <a href="https://github.com/martinlpc" target="_blank" rel="noopener">GitHub</a>,
+                        <a href="https://linkedin.com/in/martinlpacheco" target="_blank" rel="noopener">LinkedIn</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Location</dt>
+                    <dd>Buenos Aires, Argentina (UTC−3)</dd>
+                </div>
+            </dl>
         </div>
     </section>
 </main>
 
-<footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            MP<span>/</span>
-        </div>
-        <p>Designed & Developed by Martin Pacheco.</p>
-        <p>© <span id="current-year"></span> All rights reserved.</p>
-    </div>
+<footer class="site-footer wrap">
+    <span>© <span id="year">2026</span> Martin Pacheco</span>
+    <span>There's something in the console.</span>
 </footer>
 
-<script src="main.js"></script>
 </body>
 </html>
