@@ -1,57 +1,53 @@
-const SUPABASE_URL = (process.env.SUPABASE_URL || "").replace(/\/+$/, "");
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
-const STATS_TOKEN = process.env.STATS_TOKEN || "";
-const VISIT_TZ = process.env.VISIT_TZ || "America/Argentina/Buenos_Aires";
+const { timingSafeEqual } = require("crypto");
+const { supabase, todayISO } = require("./_supabase");
 
-async function supabase(path) {
-    const res = await fetch(SUPABASE_URL + "/rest/v1" + path, {
-        headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: "Bearer " + SUPABASE_KEY
-        }
-    });
-    if (!res.ok) {
-        throw new Error("Supabase error " + res.status);
+const STATS_TOKEN = process.env.STATS_TOKEN || "";
+const PAGE_SIZE = 1000; // Supabase caps each response at 1000 rows by default.
+
+function isAuthorized(token) {
+    if (!STATS_TOKEN || typeof token !== "string") return false;
+    const a = Buffer.from(token);
+    const b = Buffer.from(STATS_TOKEN);
+    return a.length === b.length && timingSafeEqual(a, b);
+}
+
+async function fetchAllDates() {
+    const dates = [];
+    for (let offset = 0; ; offset += PAGE_SIZE) {
+        const res = await supabase(
+            `/visit_events?select=date&order=id&limit=${PAGE_SIZE}&offset=${offset}`
+        );
+        const rows = await res.json();
+        for (const row of rows) dates.push(row.date);
+        if (rows.length < PAGE_SIZE) return dates;
     }
-    return res;
 }
 
 module.exports = async function handler(req, res) {
     const auth = req.headers.authorization || "";
-    const token = auth.startsWith("Bearer ")
-        ? auth.slice(7)
-        : req.query.token;
+    const token = auth.startsWith("Bearer ") ? auth.slice(7) : req.query.token;
 
-    if (!token || token !== STATS_TOKEN) {
+    if (!isAuthorized(token)) {
         return res.status(401).json({ error: "Unauthorized" });
     }
 
     try {
-        const response = await supabase("/visit_events?select=date");
-        const rows = await response.json();
+        const dates = await fetchAllDates();
 
-        const perDayMap = new Map();
-        for (const row of rows) {
-            perDayMap.set(row.date, (perDayMap.get(row.date) || 0) + 1);
-        }
+        const counts = new Map();
+        for (const date of dates) counts.set(date, (counts.get(date) || 0) + 1);
 
-        const perDay = Array.from(perDayMap.entries())
-            .sort(([a], [b]) => (a < b ? -1 : 1))
+        const perDay = [...counts]
+            .sort(([a], [b]) => a.localeCompare(b))
             .map(([date, count]) => ({ date, count }));
 
-        const today = new Intl.DateTimeFormat("en-CA", {
-            timeZone: VISIT_TZ,
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit"
-        }).format(new Date());
-
         return res.status(200).json({
-            today: perDayMap.get(today) || 0,
-            total: rows.length,
+            today: counts.get(todayISO()) || 0,
+            total: dates.length,
             perDay
         });
     } catch (err) {
+        console.error(err);
         return res.status(500).json({ error: "Could not load stats" });
     }
-}
+};
